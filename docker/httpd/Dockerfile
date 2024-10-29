@@ -1,5 +1,6 @@
 FROM httpd:2.4
 
+# docker build --build-arg REPO_URL=.....
 ARG REPO_URL=https://github.com/Kimwonjoon/Kimwonjoon.github.io.git
 COPY ./my-httpd.conf /usr/local/apache2/conf/httpd.conf
 
