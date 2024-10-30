@@ -35,7 +35,6 @@ while True:
                 print(f"Container가 임계값을 넘은지 1분이 지났습니다. 현재 컨테이너 개수 : {sca}")
                 sca += 1
                 subprocess.run(["docker", "compose", "scale", f"blog={sca}"])
-
                 response = requests.post(api_url, headers = {'Authorization':'Bearer ' + key},
                         data = {'message' : 'Container Scale Out'})
 
