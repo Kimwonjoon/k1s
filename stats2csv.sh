@@ -16,7 +16,8 @@ while true; do
 
   # docker stats를 실행하여 1회 측정 후 결과를 파싱
   docker stats --no-stream --format "$timestamp,{{.Name}},{{.CPUPerc}},{{.MemPerc}}" >> $output_file
-
+	
+  echo "."
   # 10초 대기
   sleep 10
 done

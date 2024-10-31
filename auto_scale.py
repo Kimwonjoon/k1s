@@ -6,12 +6,12 @@ import yaml
 import requests
 import os
 
-import pandas as pd
+#import pandas as pd
 
 api_url = 'https://notify-api.line.me/api/notify'
 key = os.getenv('LINE_NOTI_PATH')
-file_path = '/home/kimpass189/code/docker/k1s/data/cpu.csv'
-os.makedirs(os.path.dirname(file_path), exist_ok=True)
+#file_path = '/home/kimpass189/code/docker/k1s/data/cpu.csv'
+#os.makedirs(os.path.dirname(file_path), exist_ok=True)
 
 # yml 파일을 읽어서 임계값 가져오기
 with open('docker-compose.yml') as f:
@@ -65,12 +65,12 @@ try:
 
         time.sleep(10)
 except KeyboardInterrupt: # ctrl+c 로 종료한 경우
-    if os.path.exists(file_path): # 파일이 이미 있다면?
-        data = pd.read_csv(file_path)
-        new_data = pd.DataFrame({'cpu' : cpu_list})
-        con_data = pd.concat([data, new_data])
-        con_data.to_csv(file_path, index = False)
-    else: # 파일을 처음 만드는 경우
-        data = pd.DataFrame({'cpu' : cpu_list})
-        data.to_csv(file_path, index = False)
+#    if os.path.exists(file_path): # 파일이 이미 있다면?
+#        data = pd.read_csv(file_path)
+#        new_data = pd.DataFrame({'cpu' : cpu_list})
+#        con_data = pd.concat([data, new_data])
+#        con_data.to_csv(file_path, index = False)
+#    else: # 파일을 처음 만드는 경우
+#        data = pd.DataFrame({'cpu' : cpu_list})
+#        data.to_csv(file_path, index = False)
     print(f"종료!, 파일 경로는 {file_path} 입니다.")
