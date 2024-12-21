@@ -1,4 +1,4 @@
-# K1S
+# K1S (Python을 통한 K8S Auto Scaling 구현)
 - https://hub.docker.com/_/httpd
 
 # BUILD & RUN
